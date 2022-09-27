@@ -5,14 +5,14 @@
 
 using namespace std;
 int main(){
-    int i, sumi, a, sum, num;
-    string fileName, line;
-    fileName="numbers.txt";
+    int i, sum, num;
+    string line;
+    const string fileName="numbers.txt";
     ofstream fif(fileName);
     for (i=0; i<=9; i++){
         cout<<"Enter "<<i+1<<" number"<<endl;
-        cin>>a;
-        fif<<a<<endl;
+        cin>>num;
+        fif<<num<<endl;
     }
     fif.close();
 
