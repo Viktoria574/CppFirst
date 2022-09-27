@@ -10,7 +10,7 @@ int main(){
     fileName="numbers.txt";
     ofstream fif(fileName);
     for (i=0; i<=9; i++){
-        cout<<"ВВедите"<<i<<"число"<<endl;
+        cout<<"Enter "<<i+1<<" number"<<endl;
         cin>>a;
         fif<<a<<endl;
     }
@@ -23,7 +23,7 @@ int main(){
       sum+=stoi(line);
     };
 
-    cout<<"Итоговая сумма:"<<sum<<endl;
+    cout<<"Amount:"<<sum<<endl;
     
     fof.close();
 }
