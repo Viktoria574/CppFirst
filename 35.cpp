@@ -13,8 +13,8 @@ int main(){
     const string fileIn="workin.txt";
     const string fileOut="workout.txt";
 
-    // cout<<"Write 30 latters please"<<endl;
-    // cin>>letr;
+    cout<<"Write 30 latters please"<<endl;
+    cin>>letr;
 
     ifstream fof(fileIn);
     fof>>strok;
