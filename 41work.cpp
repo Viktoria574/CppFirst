@@ -10,9 +10,9 @@ int main(){
     fileName="numbers.txt";
     ofstream fif(fileName);
     for (i=0; i<=9; i++){
-        // cout<<"ВВедите"<<i<<"число"<<endl;
-        // cin>>a;
-        fif<<rand()<<endl;
+        cout<<"ВВедите"<<i<<"число"<<endl;
+        cin>>a;
+        fif<<a<<endl;
     }
     fif.close();
 
