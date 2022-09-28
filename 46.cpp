@@ -1,5 +1,4 @@
 #include <iostream>
-#include <clocale>
 
 using namespace std;
 
@@ -7,8 +6,6 @@ int transl(char s);
 
 int main()
 {
-    setlocale(LC_ALL, "Russian");
-
     int item, prev = 0, res = 0;
     string number;
 
@@ -19,16 +16,7 @@ int main()
     for (char letter : number)
     {
         item = transl(letter);
-
-        if (prev < item && prev > 0)
-        {
-            res -= prev;
-        }
-        else
-        {
-            res += prev;
-        };
-
+        res += (prev < item && prev != 0) ? -prev : prev;
         prev = item;
     }
     res += prev;
