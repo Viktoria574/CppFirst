@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <clocale>
 
 using namespace std;
@@ -10,29 +9,31 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
 
-    int temp, res = 0;
+    int item, prev = 0, res = 0;
     string number;
-    vector<int> nom;
 
     cout << "Write down any roman number" << endl;
     // cin>>number;
-    number = "XIC";
+    number = "MMIX";
 
     for (char letter : number)
     {
-        nom.push_back(transl(letter));
-    }
+        item = transl(letter);
 
-    for (int item : nom)
-    {
-        cout << item << endl;
-        res += item;
-    }
+        if (prev < item && prev > 0)
+        {
+            res -= prev;
+        }
+        else
+        {
+            res += prev;
+        };
 
-    cout << res << endl;
-    // if (nom[0]>=nom[1]{
-    // sumi
-    // }
+        prev = item;
+    }
+    res += prev;
+
+    cout << number << "=" << res << endl;
 }
 
 int transl(char s)
