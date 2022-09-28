@@ -1,51 +1,57 @@
 #include <iostream>
 #include <vector>
+#include <clocale>
 
 using namespace std;
 
 int transl(char s);
-int main(){
-    int i;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int temp, res = 0;
     string number;
     vector<int> nom;
-    cout<<"Write down any roman number"<<endl;
-    // cin>>number;
-    number="XIC";
-    // for (i=0; i<number.length(); i++){
-    //     nom.push_back(transl(number[i]));
-    //     // cout<<transl(number[i])<<endl;
-    // }
 
-    for (char letter : number){
+    cout << "Write down any roman number" << endl;
+    // cin>>number;
+    number = "XIC";
+
+    for (char letter : number)
+    {
         nom.push_back(transl(letter));
     }
 
-    // if (nom[0]>=nom[1]{
-        // sumi
-    // }
+    for (int item : nom)
+    {
+        cout << item << endl;
+        res += item;
+    }
 
+    cout << res << endl;
+    // if (nom[0]>=nom[1]{
+    // sumi
+    // }
 }
 
-int transl(char s){
-    if (s==('I')){
+int transl(char s)
+{
+    switch (s)
+    {
+    case 'I':
         return 1;
-    }
-    if (s==(char)'V'){
+    case 'V':
         return 5;
-    }
-    if (s==(char)'X'){
+    case 'X':
         return 10;
-    }
-    if (s==(char)'L'){
+    case 'L':
         return 50;
-    }
-    if (s==(char)'C'){
+    case 'C':
         return 100;
-    }
-    if (s==(char)'D'){
+    case 'D':
         return 500;
-    }
-    if (s==(char)'M'){
+    case 'M':
         return 1000;
     }
 }
