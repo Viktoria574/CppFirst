@@ -1,8 +1,11 @@
 #include <iostream>
+#include <regex>
 
 using namespace std;
 
 int transl(char s);
+
+bool is_valid_roman(string str);
 
 int main()
 {
@@ -10,18 +13,24 @@ int main()
     string number;
 
     cout << "Write down any roman number" << endl;
-    // cin>>number;
-    number = "MMIX";
-
-    for (char letter : number)
+    cin >> number;
+    // number = "MCMLXXXVII";
+    if (!is_valid_roman(number))
     {
-        item = transl(letter);
-        res += (prev < item && prev != 0) ? -prev : prev;
-        prev = item;
+        cout << "Incorrect" << endl;
     }
-    res += prev;
+    else
+    {
+        for (char letter : number)
+        {
+            item = transl(letter);
+            res += (prev < item && prev != 0) ? -prev : prev;
+            prev = item;
+        }
+        res += prev;
 
-    cout << number << "=" << res << endl;
+        cout << number << "=" << res << endl;
+    }
 }
 
 int transl(char s)
@@ -43,4 +52,10 @@ int transl(char s)
     case 'M':
         return 1000;
     }
+}
+
+bool is_valid_roman(string str)
+{
+    const regex r(R"(^M{0,3}(CM|CD|D?C{0,3})?(XC|XL|L?X{0,3})?(IX|IV|V?I{0,3})?$)");
+    return regex_match(str, r);
 }
