@@ -1,24 +1,20 @@
 #include <iostream>
 #include <fstream>
-#include <clocale>
 
 using namespace std;
 int main(){
-    setlocale(LC_ALL, "Russian");
-    
     bool flag;
     int i, j;
     string letr, strok;
     char fron, a;
-    const string fileIn="workin.txt";
-    const string fileOut="workout.txt";
-
+    ofstream fi("work.txt");
     cout<<"Write 30 latters please"<<endl;
     cin>>letr;
+    fi<<letr;
+    fi.close();
 
-    ifstream fof(fileIn);
+    ifstream fof("work.txt");
     fof>>strok;
-    cout<<strok<<endl;
     fof.close();
 
     flag=true;
@@ -30,15 +26,9 @@ int main(){
                 strok[j]=strok[j+1];
                 strok[j+1]=fron;
                 flag=true;
-                // cout<<int(strok[j+1])<<endl;
-                // cout<<strok;
             }
         }
         
     }
-    cout<<strok<<endl;
-    
-    ofstream fif(fileOut);
-    fif<<strok;
-    fif.close();
+    cout<<strok;
 }

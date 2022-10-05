@@ -16,7 +16,7 @@ int main()
         cout<<S/(n*12);
     }
     if (n==0){
-        cout<<"Ошибка";
+        cout<<"Error";
     }
 
     return 0;
