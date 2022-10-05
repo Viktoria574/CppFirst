@@ -8,7 +8,7 @@ int name(int, int);
 
 string win(int, int);
 
-int convert(string, int);
+int convert_to_ten(string, int);
 
 int main() {
     system("chcp 1251");
@@ -22,7 +22,9 @@ int main() {
     cin >> b;
     cout << "¬ведите число" << endl;
     cin >> st;
-    ten = name(stoi(st), a);
+    // ten = name(stoi(st), a);
+    ten = convert_to_ten(st, a);
+
     if (ten == 0) {
         cout << "Error";
     }
@@ -70,8 +72,12 @@ string win(int ten, int b) {
     return r;
 }
 
-int convert(string line, int a) {
-    static string digits = "0123456789ABCDEFGHIJ"
-    
-
+int convert_to_ten(string str, int a) {
+    static string digits = "0123456789ABCDEFGHIJ";
+    int pos = 0, res = 0;
+    for (int i = str.length() - 1; i >= 0; i--) {
+        res += digits.find(str[i]) * pow(a, pos);
+        pos++;
+    };
+    return res;
 }
