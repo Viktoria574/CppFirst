@@ -22,6 +22,7 @@ int main() {
     cin >> b;
     cout << "¬ведите число" << endl;
     cin >> st;
+    
     // ten = name(stoi(st), a);
     ten = convert_to_ten(st, a);
 
