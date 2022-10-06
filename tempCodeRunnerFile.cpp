@@ -1,1 +1,1 @@
-j=0; j<strok.length()-1; j++
+using namespace std;
