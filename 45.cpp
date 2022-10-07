@@ -1,24 +1,19 @@
-#include <SFML/Graphics.hpp>
+#include <iostream>
+#include <cmath>
 
-int main()
+using namespace std;
+int main(){
+    for (float y = 2; y > -2; y-=1/11.0)
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-
-    while (window.isOpen())
+    for (float x = -7; x < 7; x+=1/11.0)
     {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
+        if (abs(y - sin(x)) > 1 / 19.0){
+            cout<<" ";
         }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
-
-    return 0;
+        else{
+            cout<<"*";
+        }
+}
+cout<<"\n";
+}
 }
