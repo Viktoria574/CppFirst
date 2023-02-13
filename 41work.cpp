@@ -9,8 +9,6 @@ int main() {
   setlocale(LC_ALL, "Russian");
   int i, sum, num;
   string line;
-  cin >> line;
-  cout << endl << line << endl;
   const string fileName = "numbers.txt";
   ofstream fif(fileName);
   for (i = 0; i <= 9; i++) {
@@ -23,7 +21,6 @@ int main() {
   sum = 0;
   ifstream fof(fileName);
   while (getline(fof, line)) {
-    cout << line << endl;
     sum += stoi(line);
   };
 

@@ -14,7 +14,6 @@ int main()
 
     cout << "Write down any roman number" << endl;
     cin >> number;
-    // number = "MCMLXXXVII";
     if (!is_valid_roman(number))
     {
         cout << "Incorrect" << endl;

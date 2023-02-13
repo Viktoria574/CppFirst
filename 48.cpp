@@ -26,9 +26,9 @@ int main()
     cout << "1.2)" << comparison(mini, cos1 - com1, cos2 - com2, cos3 - com3) << " saller earned few money" << endl;
     cout << "2.1)" << comparison(max({com1, com2, com3}), com1, com2, com3) << " saller received more commision" << endl;
     cout << "2.2)" << comparison(min({com1, com2, com3}), com1, com2, com3) << " saller recieved few commition" << endl;
-    cout << "3) All earned money " << cos1 - com1 + cos2 - com2 + cos3 - com3 << endl;
+    cout << "3) All earned money " <<cos1+cos2 + cos3<< endl;
     cout << "4)All commision " << com1 + com2 + com3<<endl;
-    cout << "5)All money " << cos1 + cos2 + cos3;
+    cout << "5)All money " << cos1 + cos2 + cos3+com1+com2+com3;
 }
 double counter(double *a, double *b)
 {

@@ -3,6 +3,7 @@
 #include <vector>
 #include <sstream>
 #include <cmath>
+#include <algorithm>
 
 using namespace std;
 
@@ -16,15 +17,12 @@ int main(){
     string data, s;
     int a, b,c;
     cout<<"Please enter subject and number(s)"<<endl;
-    // data="P 3 4";
     cin>>data;
     istringstream fov(data);
     
     while (getline(fov, s, ';')){
-        // cout<<s<<endl;
         numbers.push_back(s);
     }
-    // cout<<numbers[1];
 
     if ((char)data[0]==(char)'P'){
         a=stoi(numbers[1]);
@@ -36,7 +34,12 @@ int main(){
         a=stod(numbers[1]);
         b=stod(numbers[2]);
         c=stod(numbers[3]);
-        cout<<"The area of the figure is "<<trio(a, b, c);
+        if (trio(a,b,c)==-1){
+            cout<<"Error";
+        }
+        else{
+            cout<<"The area of the figure is "<<trio(a, b, c);
+        }
     }
 
     if ((char)data[0]==(char)'O'){
@@ -51,8 +54,13 @@ double pram(double a, double b){
 
 double trio(double a, double b, double c){
     double p;
-    p=(a+b+c)/2;
-    return(pow((p*(p-a)*(p-b)*(p-c)), 0.5));
+    if (max({a,b,c})<a+b+c-max({a,b,c})){
+        p=(a+b+c)/2;
+        return(pow((p*(p-a)*(p-b)*(p-c)), 0.5));
+    }
+    else{
+        return -1;
+    }
 }
 
 double okr(double a){

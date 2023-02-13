@@ -22,5 +22,4 @@ int main(){
         }
         i+=1;
     }
-    //cout<<string(3, 'g');
 }
