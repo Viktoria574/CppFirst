@@ -16,11 +16,8 @@ int main() {
 
     int a, b, ten;
     string st, t, nus;
-    cout << "Иcходное основание" << endl;
     cin >> a;
-    cout << "Основание результата" << endl;
     cin >> b;
-    cout << "Введите число" << endl;
     cin >> st;
     ten = convert_to_ten(st, a);
 

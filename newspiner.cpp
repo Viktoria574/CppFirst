@@ -21,5 +21,10 @@ int main(){
         counter3=0;
         counter4=0;
     }
-    cout<<counter3<<" "<<counter4;
+    if (n<3){
+        cout<<0<<" "<<0;
+    }
+    else{
+        cout<<counter3<<" "<<counter4;
+    }
 }

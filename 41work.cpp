@@ -12,7 +12,6 @@ int main() {
   const string fileName = "numbers.txt";
   ofstream fif(fileName);
   for (i = 0; i <= 9; i++) {
-    cout << "¬ведите " << i + 1 << " число" << endl;
     cin >> num;
     fif << num << endl;
   }
@@ -24,7 +23,7 @@ int main() {
     sum += stoi(line);
   };
 
-  cout << "—умма:" << sum << endl;
+  cout<< sum << endl;
 
   fof.close();
 }

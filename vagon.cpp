@@ -29,7 +29,6 @@ int main(){
         }
     }
     for(k=0; k<=n-1; k++){
-        cout<<number[k]<<" ";
         if((number[k]+3==number[k+3] and number[k+3]%4==0 and number[k+3]<=36) or (number[k]>=37 and number[k]+1==number[k+1] and number[k+1]%2==0)){
             counter+=1;
             if (number[k+3]<=36){

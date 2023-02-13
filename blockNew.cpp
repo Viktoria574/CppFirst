@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
     int a, b,len, pere, j, counter=1, kop=0;
-    vector <int> glav={7, 13, 4, 15, 11, 9, 17, 10, 12, 8, 14, 5, 2, 6, 16, 3};
+    vector <int> glav={7, 13, 4, 15, 11, 9, 17, 10, 12, 8, 14, 5, 3, 6, 16, 2};
     vector <int> leo={1, 1};
     vector <int> ans;
     len=leo.size();
@@ -22,7 +22,7 @@ int main(){
     }
     j=leo.size()-1;
     int i=glav.size()-1;
-    while(counter!=0){
+    while(glav.size()!=0){
         j=leo.size()-1;
         i=glav.size()-1;
         counter=0;
@@ -40,7 +40,7 @@ int main(){
                     glav[i-2]=pere;
                     counter+=1;
                 }
-                i-=1;
+                i-=2;
             }
             else{
                 if (glav[i]<glav[i-1] and glav[i-1]>glav[leo[j-1]-1]){
@@ -59,8 +59,12 @@ int main(){
                 j-=1;
             }
         }
+        if (counter==0){
+            ans.insert(ans.begin(), glav[glav.size()-1]);
+            glav.pop_back();
+        }
     }
-    for(int k=0; k<glav.size(); k++){
-        cout<<glav[k]<<" ";
+    for(int k=0; k<ans.size(); k++){
+        cout<<ans[k]<<" ";
     }
 }
